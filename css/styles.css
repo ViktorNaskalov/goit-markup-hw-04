@@ -99,6 +99,25 @@ a{
     .contacts-link:hover,
     .contacts-link:focus{
     color: #404bbf;
+    transition-duration: 250mc;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+.current {
+    color: #404bbf;
+    position: relative;
+} 
+    
+.current::after{
+    content: "";
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -1px;   
     }
 
 .contacts {
@@ -123,13 +142,19 @@ display: block;
 /* #region section-one */
 
 .main-section-one{
-    background-color: #2e2f42;
-    display: flex;               
-  flex-direction: column;      
-  align-items: center;         
-  justify-content: center;    
-  padding: 188px 0 188px ;
-  text-align: center;  
+background-color: #2e2f42;
+display: flex;               
+align-items: center;         
+justify-content: center;    
+padding: 188px 0 188px ;
+text-align: center; 
+background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(/images/people-office.jpg); 
+background-repeat: no-repeat;
+background-size: cover;
+flex-direction: column;
+width: 1440px;
+margin-left: auto;
+margin-right: auto;      
 }
 
 .section-one-h{
@@ -163,6 +188,8 @@ margin: 0 auto;
 .section-one-button:hover,
 .section-one-button:focus{
     background: #404bbf;
+    transition-duration: 250mc;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -182,6 +209,18 @@ padding-bottom: 120px;
 
 .section-two-item{
     width: 264px;}
+
+.section-two-link{
+border: 1px solid #8e8f99;
+border-radius: 4px;
+background-color: #f4f4fd;
+margin-bottom: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 24px;
+padding-bottom: 24px;
+}
 
 .section-two-item-h{
 font-weight: 500;
@@ -207,6 +246,7 @@ color: #434455;
     background-color: #f4f4fd;
     padding-bottom: 120px;
     padding-top: 120px;
+
 }
 
 .team-h{
@@ -228,6 +268,7 @@ color: #434455;
 .team-item{
     background-color: #ffffff;
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     }
 
 .container-team-item{
@@ -251,6 +292,37 @@ letter-spacing: 0.02em;
 text-align: center;
 color: #434455;
 }
+
+.social-link{
+    display: flex ;
+     gap: 24px;
+     margin-top: 8px;
+    justify-content: center;
+ }
+
+.social-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    
+}
+
+.social-icon{
+    fill: #f4f4fd;
+    
+    }
+
+    .social-list:hover,
+    .social-list:focus{
+    background-color:  #404bbf;
+    transition-duration: 250mc;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
 /* #endregion */
 
@@ -280,6 +352,37 @@ margin-bottom: 72px;
     column-gap: 24px;
     }
 
+.portfolio-item{
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-link:hover .overlay,
+.overlay-link:focus .overlay{
+    transform: translateY(0);
+    transition-duration: 250mc;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translateY(-100%);
+    transition-duration: 250mc;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #4d5ae5;
+    width: 360px;
+height: 300px;
+padding-top: 40px;
+padding-left: 32px;
+padding-right: 32px;
+    
+}
+.overlay-text{
+    color: #f4f4fd;
+    overflow: auto;
+}
 .container-text-potfolio{
     border-left: 1px solid #e7e9fc;
     border-right: 1px solid #e7e9fc;
@@ -317,14 +420,16 @@ color: #434455;
     background-color: #2e2f42;
     padding-top: 100px; 
     padding-bottom: 100px;
+    position: relative;
     }
+
 
 .container .footer-logo {
     display: inline-block;
+    
     }
 
 .footer-logo{
-    flex-direction: column;
     margin-bottom: 16px;
     width: 115px;
     display: flex;
@@ -341,6 +446,40 @@ color: #434455;
     color: #f4f4fd;
     width: 264px;
     }
+
+    .ft:hover,
+    .ft:focus{
+    background-color:   #31d0aa;
+    transition-duration: 250mc;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+.container-footer{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        margin-left: 400px;
+       
+    }
+
+.footer-h{
+    font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: #fff;
+position: relative;
+display: flex;
+justify-content: start;
+align-items: center;
+
+}
+
+
+
+
 
 /* #endregion */
 
