@@ -364,38 +364,36 @@ margin-bottom: 72px;
     column-gap: 24px;
     }
 
+.portfolio-list:hover,
+.portfolio-list:focus{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    translateY(0%);
+}
+
 .portfolio-item{
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item-img{
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
-.overlay-link:hover .overlay,
-.overlay-link:focus .overlay{
-    transform: translateY(0);
-    transition-duration: 250mc;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow:0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.overlay{
+.text{
     position: absolute;
-    top:0;
-    left: 0;
-    transform: translateY(-100%);
-    transition-duration: 250mc;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5; 
+    letter-spacing: 0.02em;
+    color: #f4f4fd; 
+    padding: 40px 32px;
     background-color: #4d5ae5;
-    width: 360px;
-height: 300px;
-padding-top: 40px;
-padding-left: 32px;
-padding-right: 32px;
-    
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%); 
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
-.overlay-text{
-    color: #f4f4fd;
-    overflow: auto;
-}
+
 .container-text-potfolio{
     border-left: 1px solid #e7e9fc;
     border-right: 1px solid #e7e9fc;
@@ -481,8 +479,8 @@ display: flex;
 gap: 16px;
 }
 
-.ft:hover,
-.ft:focus{
+.social-link-footer .social-list:hover,
+.social-link-footer .social-list:focus{
 background-color:   #31d0aa;
 transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
