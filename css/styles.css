@@ -110,7 +110,6 @@ a{
     position: relative;
     
 } 
-.nav-link
     
 .current::after{
     content: "";
